@@ -1,0 +1,85 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    maven { url = "https://maven.shedaniel.me/" }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        // forRepositories(fg.repository) // Uncomment when using ForgeGradle
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/disc_jockey.accesswidener")
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+//    mappings loom.officialMojangMappings()
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+    implementation("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}")
+
+    implementation("maven.modrinth:modmenu:${project.modmenu_version}")
+}
+
+def modVersion = project.version
+
+processResources {
+    inputs.property "version", modVersion
+    filteringCharset = "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand(["version": modVersion])
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+    it.options.release = 25
+}
+
+java {
+    withSourcesJar()
+}
+
+jar {
+    from("LICENSE") {
+        // 原来写的是 inputs.properties.archivesName，而 archivesName 并不是 jar 任务的 input property，
+        // 展开成 null → jar 里出现 LICENSE_null；这里直接用 gradle.properties 里的 archives_base_name。
+        rename { "${it}_${project.archives_base_name}" }
+    }
+}
+
+// configure the maven publication
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            artifactId = project.archives_base_name
+            from components.java
+        }
+    }
+
+    repositories {
+
+    }
+}
