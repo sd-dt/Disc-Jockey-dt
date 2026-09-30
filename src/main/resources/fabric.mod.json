@@ -3,7 +3,7 @@
   "id": "disc_jockey",
   "version": "${version}",
   "name": "Disc-Jockey-dt",
-  "description": "https://github.com/sd-dt/Disc-Jockey-dt\n在 Minecraft 里播放音符盒歌曲（MIDI / NBS）· MC 26.2 移植与修复改版",
+  "description": "https://github.com/sd-dt/Disc-Jockey-dt ｜ Disc Jockey 的 MC 26.2 移植与修复改版（MIDI / NBS 音符盒点歌机）",
   "authors": [
     "SemmieDev",
     "xjjakm",
