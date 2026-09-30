@@ -77,7 +77,10 @@
 
 * 本仓库代码沿用上游 **MIT** 许可，见 [LICENSE](LICENSE)。按 MIT 要求，请保留原版权声明：
   `Copyright (c) 2022 Semmieboy_YT`。
-* 原作：**SemmieDev**（Disc Jockey）；本改版基于 **xjjakm** 的 `26.2` / `1.21.11` 分支，并参考其 1.21.11 移植线。
+* 作者署名（与 `fabric.mod.json` 一致）：
+  * **SemmieDev** —— 原作者（Disc Jockey，上游止于 1.7.0 / MC 1.21）
+  * **xjjakm** —— 二次修改作者（[xjjakm/Disc-Jockey](https://github.com/xjjakm/Disc-Jockey) 的 `26.2` / `1.21.11` 分支，本改版的基线）
+  * **sd_dt**、**deepseekfl4.1** —— 本改版（26.2 移植整合 + 音色映射与自定义乐器修复）
 * 上游贡献者：EnderKill98、myueqf、EnderPhantomWing、chxjj。
 * MIDI 音色映射表取自 [Open Note Block Studio](https://github.com/OpenNBS/NoteBlockStudio) 的 `midi_instruments` 脚本。
 * 歌曲文件（`.nbs` / `.mid`）的版权属于各自的曲作者，与本仓库无关。
