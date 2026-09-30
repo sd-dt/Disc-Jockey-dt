@@ -3,11 +3,12 @@
   "id": "disc_jockey",
   "version": "${version}",
   "name": "Disc-Jockey-dt",
-  "description": "Play note block songs in Minecraft (MIDI + NBS 支持 / 26.2 移植与修复版)\nhttps://github.com/sd-dt/Disc-Jockey-dt",
+  "description": "https://github.com/sd-dt/Disc-Jockey-dt\n在 Minecraft 里播放音符盒歌曲（MIDI / NBS）· MC 26.2 移植与修复改版",
   "authors": [
     "SemmieDev",
     "xjjakm",
-    "sd_dt"
+    "sd_dt",
+    "deepseekfl4.1"
   ],
   "contributors": [
     "EnderKill98",
