@@ -1,3 +1,5 @@
+**简体中文** | [English](README_EN.md)
+
 # Disc-Jockey-dt
 
 在 Minecraft 里播放音符盒歌曲（`.nbs` / MIDI）。这是 **Disc Jockey 的 Minecraft 26.2 移植与修复改版**。
